@@ -1,10 +1,14 @@
+import Editor from './Editor';
+import Preview from './Preview'
+
 import '../styles/Main.css';
 
 export default function Main () {
     return (
         <>
             <main>
-                <p>Update the main section!</p>
+                <Editor />
+                <Preview />
             </main>
         </>
     )
