@@ -2,6 +2,37 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
-main>div {
-    margin: 1rem 2rem;
+.editor {
+    position: relative;
+    margin: 1rem 1rem 1rem 2rem;
+}
+nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+nav>div {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav>div:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 200ms ease-in-out;
+}
+nav>div.active {
+    background-color: #94FF9E;
+}
+
+.preview {
+    margin: 1rem 2rem 1rem 1rem;
+    background-color: #fff;
 }
