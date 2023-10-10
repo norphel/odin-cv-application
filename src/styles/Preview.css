@@ -1,0 +1,28 @@
+.name {
+    color: #000;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2rem;
+    font-size: 52px;
+}
+.profile {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+}
+.contactsAndLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-right: 2rem;
+}
+.contacts>div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}

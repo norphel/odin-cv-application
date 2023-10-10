@@ -1,7 +1,7 @@
 import profile from '../assets/profile.svg';
 import work from '../assets/work.svg';
 import projects from '../assets/projects.svg'
-import education from '../assets/education.png';
+import education from '../assets/education.svg';
 import skills from '../assets/skills.svg';
 
 function Navigation() {
