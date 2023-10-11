@@ -61,3 +61,16 @@
     text-decoration: none;
     color: inherit;
 }
+
+.education > div {
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.education > div > p {
+    text-align: right;
+    font-style: italic;
+}
+.education > div > h4 {
+    color: #5e5e5e;
+}
