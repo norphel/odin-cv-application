@@ -1,7 +1,9 @@
+.preview {
+    font-family: 'Times New Roman', Times, serif;
+}
 .name {
     color: #000;
     text-align: left;
-    font-family: 'Times New Roman', Times, serif;
     padding: 2rem;
     font-size: 52px;
 }
@@ -25,4 +27,29 @@
     display: flex;
     justify-content: flex-start;
     gap: 1rem;
+}
+.workExperience {
+    padding: 0 2rem;
+}
+.workExperience h2 {
+    font-size: 30px;
+}
+.workExperience > div {
+    margin-top: 10px
+}
+.workExperience .info {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.workExperience .info h4 {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    color: #5e5e5e;
+}
+.workExperience .info p {
+    font-style: italic;
+    text-align: right;
+}
+.workExperience .description {
+    text-align: justify;
 }
