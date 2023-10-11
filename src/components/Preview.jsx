@@ -1,11 +1,8 @@
 import Profile from './Profile';
 import WorkExperience from './WorkExperience';
+import Projects from './Projects';
+
 import '../styles/Preview.css';
-
-
-function Projects() {
-
-}
 
 function Education() {
 
@@ -19,7 +16,9 @@ export default function Preview() {
     return (
         <div className="preview">
             <Profile />
+            <hr />
             <WorkExperience />
+            <Projects />
         </div>
     )
 }
