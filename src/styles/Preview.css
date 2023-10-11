@@ -74,3 +74,9 @@
 .education > div > h4 {
     color: #5e5e5e;
 }
+
+.skills > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
