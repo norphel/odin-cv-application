@@ -1,22 +1,22 @@
 .preview {
     font-family: 'Times New Roman', Times, serif;
+    padding: 2rem 3rem;
 }
 .name {
     color: #000;
     text-align: left;
-    padding: 2rem;
     font-size: 52px;
 }
 .profile {
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: center;
+    margin-bottom: 10px;
 }
 .contactsAndLinks {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding-right: 2rem;
 }
 .contacts>div {
     display: flex;
@@ -28,14 +28,13 @@
     justify-content: flex-start;
     gap: 1rem;
 }
-.workExperience {
-    padding: 0 2rem;
-}
-.workExperience h2 {
+
+.preview h2 {
     font-size: 30px;
+    margin-bottom: 10px;
 }
 .workExperience > div {
-    margin-top: 10px
+    margin-bottom: 10px
 }
 .workExperience .info {
     display: grid;
@@ -52,4 +51,13 @@
 }
 .workExperience .description {
     text-align: justify;
+}
+
+
+.projects > div {
+    margin-bottom: 10px;
+}
+.projects a {
+    text-decoration: none;
+    color: inherit;
 }
