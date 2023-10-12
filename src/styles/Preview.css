@@ -2,12 +2,12 @@
     font-family: 'Times New Roman', Times, serif;
     padding: 2rem 3rem;
 }
-.name {
+.preview .name {
     color: #000;
     text-align: left;
     font-size: 52px;
 }
-.profile {
+.preview .profile {
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: center;
@@ -18,12 +18,12 @@
     flex-direction: column;
     gap: 5px;
 }
-.contacts>div {
+.preview .contacts>div {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.links {
+.preview .links {
     display: flex;
     justify-content: flex-start;
     gap: 1rem;
