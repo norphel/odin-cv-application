@@ -9,6 +9,8 @@ nav {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    position: sticky;
+    top: 10px;
 }
 nav>div {
     width: 50px;
