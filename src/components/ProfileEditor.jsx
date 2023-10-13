@@ -51,7 +51,7 @@ function Links() {
 
 export default function ProfileEditor() {
     return (
-        <div className="profileEditor active">
+        <div className="profileEditor">
             <h2>Profile</h2>
             <Name />
             <Contact />
