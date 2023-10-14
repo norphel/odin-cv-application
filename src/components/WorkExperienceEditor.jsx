@@ -23,7 +23,7 @@ function WorkDetails() {
 
 export default function WorkExperienceEditor() {
     return (
-        <div className="workExperienceEditor active">
+        <div className="workExperienceEditor">
             <h2>Work Experience</h2>
             <WorkDetails />
         </div>
