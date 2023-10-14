@@ -82,14 +82,15 @@ nav>div.active {
     box-sizing: border-box;
 }
 .editor .workExperienceEditor input,
-.editor .workExperienceEditor textarea {
+.editor .workExperienceEditor textarea,
+.editor .projectsEditor input,
+.editor .projectsEditor textarea {
     margin-bottom: 1rem;
 }
-.editor .workExperienceEditor textarea {
+.editor  textarea {
     resize: none;
 }
-.editor .workExperienceEditor button {
-    margin: 0 auto;
+.editor button {
     font-size: 1.2rem;
     font-weight: 600;
     padding: 0.5rem 2rem;
