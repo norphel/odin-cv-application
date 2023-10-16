@@ -84,7 +84,8 @@ nav>div.active {
 .editor .workExperienceEditor input,
 .editor .workExperienceEditor textarea,
 .editor .projectsEditor input,
-.editor .projectsEditor textarea {
+.editor .projectsEditor textarea,
+.editor .educationEditor input {
     margin-bottom: 1rem;
 }
 .editor  textarea {
