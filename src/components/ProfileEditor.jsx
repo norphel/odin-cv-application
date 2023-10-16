@@ -3,10 +3,10 @@ function Name() {
         <div className="name">
             <fieldset>
                 <legend>Name</legend>
-                <label htmlFor="firstName">First Name: 
+                <label htmlFor="firstName">First Name 
                     <input htmlFor="firstName" type="text" />
                 </label>
-                <label htmlFor="lastName">Last Name: 
+                <label htmlFor="lastName">Last Name
                     <input htmlFor="lastName" type="text" />
                 </label>
             </fieldset>
@@ -19,10 +19,10 @@ function Contact() {
         <div className="contact">
             <fieldset>
                 <legend>Contacts</legend>
-                <label htmlFor="phone">Phone: 
+                <label htmlFor="phone">Phone 
                     <input type="tel" />
                 </label>
-                <label htmlFor="email">Email:
+                <label htmlFor="email">Email
                     <input type="email" />
                 </label>
             </fieldset>
@@ -35,13 +35,13 @@ function Links() {
         <div className="links">
             <fieldset>
                 <legend>Links</legend>
-                <label htmlFor="linkedin">LinkedIn: 
+                <label htmlFor="linkedin">LinkedIn 
                     <input type="url" />
                 </label>
-                <label htmlFor="github">GitHub: 
+                <label htmlFor="github">GitHub 
                     <input type="url" />
                 </label>
-                <label htmlFor="personalPortfolio">Personal Portfolio: 
+                <label htmlFor="personalPortfolio">Personal Portfolio 
                     <input type="url" />
                 </label>
             </fieldset>
@@ -51,7 +51,7 @@ function Links() {
 
 export default function ProfileEditor() {
     return (
-        <div className="profileEditor">
+        <div className="profileEditor active">
             <h2>Profile</h2>
             <Name />
             <Contact />
