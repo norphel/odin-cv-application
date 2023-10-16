@@ -14,7 +14,7 @@ function Project() {
 
 export default function ProjectsEditor() {
     return (
-        <div className="projectsEditor active">
+        <div className="projectsEditor">
             <h2>Projects</h2>
             <Project />
         </div>
