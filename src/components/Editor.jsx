@@ -3,6 +3,7 @@ import ProfileEditor from "./ProfileEditor"
 import WorkExperienceEditor from "./WorkExperienceEditor"
 import ProjectsEditor from "./ProjectsEditor"
 import EducationEditor from "./EducationEditor"
+import SkillsEditor from "./SkillsEditor"
 
 export default function Editor() {
     return (
@@ -12,6 +13,7 @@ export default function Editor() {
             <WorkExperienceEditor />
             <ProjectsEditor />
             <EducationEditor />
+            <SkillsEditor />
         </div>
     )
 }
