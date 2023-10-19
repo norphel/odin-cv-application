@@ -21,9 +21,14 @@ function WorkDetails() {
     )
 }
 
-export default function WorkExperienceEditor() {
+export default function WorkExperienceEditor({activeEditor}) {
+    let className = 'workExperienceEditor ';
+    if (activeEditor === 'WorkExperience') {
+        console.log(activeEditor);
+        className += 'active';
+    }
     return (
-        <div className="workExperienceEditor">
+        <div className={className}>
             <h2>Work Experience</h2>
             <WorkDetails />
         </div>

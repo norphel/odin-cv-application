@@ -12,9 +12,14 @@ function Project() {
     )
 }
 
-export default function ProjectsEditor() {
+export default function ProjectsEditor({activeEditor}) {
+    let className = 'projectsEditor ';
+    if (activeEditor === 'Projects') {
+        console.log(activeEditor);
+        className += 'active';
+    }
     return (
-        <div className="projectsEditor">
+        <div className={className}>
             <h2>Projects</h2>
             <Project />
         </div>

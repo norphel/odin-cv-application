@@ -49,9 +49,14 @@ function Links() {
     )
 }
 
-export default function ProfileEditor() {
+export default function ProfileEditor({activeEditor}) {
+    let className = 'profileEditor  ';
+    if (activeEditor === 'Profile') {
+        console.log(activeEditor);
+        className += 'active';
+    }
     return (
-        <div className="profileEditor active">
+        <div className={className}>
             <h2>Profile</h2>
             <Name />
             <Contact />

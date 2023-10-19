@@ -27,9 +27,14 @@ function Education() {
     )
 }
 
-export default function EducationEditor() {
+export default function EducationEditor({activeEditor}) {
+    let className = 'educationEditor ';
+    if (activeEditor === 'Education') {
+        console.log(activeEditor);
+        className += 'active';
+    }
     return (
-        <div className="educationEditor">
+        <div className={className}>
             <h2>Education Details</h2>
             <Education />
         </div>

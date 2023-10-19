@@ -9,15 +9,15 @@ import SkillsEditor from "./SkillsEditor"
 
 export default function Editor() {
     const [activeEditor, setActiveEditor] = useState('Profile');
-
+    
     return (
         <div className="editor">
             <Navigation activeEditor={activeEditor} onActiveEditorChange={setActiveEditor} />
-            <ProfileEditor />
-            <WorkExperienceEditor />
-            <ProjectsEditor />
-            <EducationEditor />
-            <SkillsEditor />
+            <ProfileEditor activeEditor={activeEditor} />
+            <WorkExperienceEditor activeEditor={activeEditor} />
+            <ProjectsEditor activeEditor={activeEditor} />
+            <EducationEditor activeEditor={activeEditor} />
+            <SkillsEditor activeEditor={activeEditor} />
         </div>
     )
 }

@@ -12,9 +12,14 @@ function Skills() {
     )
 }
 
-export default function SkillsEditor() {
+export default function SkillsEditor({activeEditor}) {
+    let className = 'skillsEditor ';
+    if (activeEditor === 'Skills') {
+        console.log(activeEditor);
+        className += 'active';
+    }
     return (
-        <div className="skillsEditor">
+        <div className={className}>
             <h2>Skills</h2>
             <Skills />
         </div>
