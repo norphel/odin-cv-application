@@ -4,22 +4,32 @@ import projects from '../assets/projects.svg'
 import education from '../assets/education.svg';
 import skills from '../assets/skills.svg';
 
-export default function Navigation() {
+export default function Navigation({activeEditor, onActiveEditorChange}) {
     return (
         <nav>
-            <div className='active'>
-                <img src={profile} alt="profile icon" />
+            <div 
+                className={activeEditor === 'Profile' ? 'active' : ''}
+                onClick={() => onActiveEditorChange('Profile')}>
+                    <img src={profile} alt="profile icon" />
             </div>
-            <div>
-                <img src={work} alt="work experience icon" />
+            <div
+                className={activeEditor === 'WorkExperience' ? 'active' : ''}
+                onClick={() => onActiveEditorChange('WorkExperience')}>
+                    <img src={work} alt="work experience icon" />
             </div>
-            <div>
-                <img src={projects} alt="projects icon" /></div>
-            <div>
-                <img src={education} alt="education icon" />
+            <div
+                className={activeEditor === 'Projects' ? 'active' : ''}
+                onClick={() => onActiveEditorChange('Projects')}>
+                    <img src={projects} alt="projects icon" /></div>
+            <div
+                className={activeEditor === 'Education' ? 'active' : ''}
+                onClick={() => onActiveEditorChange('Education')}>
+                    <img src={education} alt="education icon" />
             </div>
-            <div>
-                <img src={skills} alt="skills icon" />
+            <div
+                className={activeEditor === 'Skills' ? 'active' : ''}
+                onClick={() => onActiveEditorChange('Skills')}>
+                    <img src={skills} alt="skills icon" />
             </div>
         </nav>
     )
