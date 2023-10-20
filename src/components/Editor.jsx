@@ -7,13 +7,17 @@ import ProjectsEditor from "./ProjectsEditor"
 import EducationEditor from "./EducationEditor"
 import SkillsEditor from "./SkillsEditor"
 
-export default function Editor() {
+export default function Editor({onFirstNameChange, onLastNameChange}) {
     const [activeEditor, setActiveEditor] = useState('Profile');
     
     return (
         <div className="editor">
             <Navigation activeEditor={activeEditor} onActiveEditorChange={setActiveEditor} />
-            <ProfileEditor activeEditor={activeEditor} />
+            <ProfileEditor 
+                activeEditor={activeEditor} 
+                onFirstNameChange={onFirstNameChange}
+                onLastNameChange={onLastNameChange}
+            />
             <WorkExperienceEditor activeEditor={activeEditor} />
             <ProjectsEditor activeEditor={activeEditor} />
             <EducationEditor activeEditor={activeEditor} />

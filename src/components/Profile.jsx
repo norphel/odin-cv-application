@@ -19,10 +19,10 @@ function Link({src, alt, url}) {
     )
 }
 
-export default function Profile() {
+export default function Profile({firstName, lastName}) {
     return (
         <div className="profile">
-            <h1 className='name'>FirstName LastName</h1>
+            <h1 className='name'>{firstName} {lastName}</h1>
             <div className="contactsAndLinks">
             <div className="contacts">
                     <Contact src={phoneIcon} alt={'phone icon'} contact={'0000000000'} />

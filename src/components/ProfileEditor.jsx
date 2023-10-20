@@ -1,13 +1,21 @@
-function Name() {
+function Name({onFirstNameChange, onLastNameChange}) {
     return (
         <div className="name">
             <fieldset>
                 <legend>Name</legend>
                 <label htmlFor="firstName">First Name 
-                    <input htmlFor="firstName" type="text" />
+                    <input 
+                        htmlFor="firstName" 
+                        type="text" 
+                        onChange={(e) => onFirstNameChange(e.target.value)}
+                    />
                 </label>
                 <label htmlFor="lastName">Last Name
-                    <input htmlFor="lastName" type="text" />
+                    <input 
+                        htmlFor="lastName" 
+                        type="text" 
+                        onChange={(e) => onLastNameChange(e.target.value)}
+                    />
                 </label>
             </fieldset>
         </div>
@@ -49,7 +57,7 @@ function Links() {
     )
 }
 
-export default function ProfileEditor({activeEditor}) {
+export default function ProfileEditor({activeEditor, onFirstNameChange, onLastNameChange}) {
     let className = 'profileEditor  ';
     if (activeEditor === 'Profile') {
         console.log(activeEditor);
@@ -58,7 +66,10 @@ export default function ProfileEditor({activeEditor}) {
     return (
         <div className={className}>
             <h2>Profile</h2>
-            <Name />
+            <Name 
+                onFirstNameChange={onFirstNameChange}
+                onLastNameChange={onLastNameChange}
+            />
             <Contact />
             <Links />
         </div>
