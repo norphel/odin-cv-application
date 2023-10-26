@@ -13,6 +13,12 @@ export default function Main () {
     const [linkedInLink, setLinkedInLink] = useState('');
     const [githubLink, setGithubLink] = useState('');
     const [personalPortfolioLink, setPersonalPortfolioLink] = useState('');
+    const [position, setPosition] = useState('');
+    const [organization, setOrganization] = useState('');
+    const [fromDateWE, setFromeDateWE] = useState('');
+    const [tillDateWE, setTillDateWE] = useState('');
+    const [contribution, setContribution] = useState('');
+
     return (
         <>
             <main>
@@ -24,6 +30,11 @@ export default function Main () {
                     onLinkedInLinkChange={setLinkedInLink}
                     onGithubLinkChange={setGithubLink}
                     onPersonalPortfolioLinkChange={setPersonalPortfolioLink}
+                    onPostionChange={setPosition}
+                    onOrganizationChange={setOrganization}
+                    onFromDateWEChange={setFromeDateWE}
+                    onTillDateWEChange={setTillDateWE}
+                    onContributionChange={setContribution}
                 />
                 <Preview 
                     firstName={firstName}
@@ -33,6 +44,11 @@ export default function Main () {
                     linkedInLink={linkedInLink}
                     githubLink={githubLink}
                     personalPortfolioLink={personalPortfolioLink}
+                    position={position}
+                    organization={organization}
+                    fromDateWE={fromDateWE}
+                    tillDateWE={tillDateWE}
+                    contribution={contribution}
                 />
             </main>
         </>
