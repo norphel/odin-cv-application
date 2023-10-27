@@ -1,22 +1,30 @@
 function getMonthString(month) {
-    return month === 1 ? 'Jan' : month === 2 ? 'Feb' : month === 3 ? 'Mar' : month === 4 ? 'Apr' : month === 5 ? 'May' : month === 6 ? 'June' : month === 7 ? 'July' : month === 8 ? 'Aug' : month === 9 ? 'Sept' : month === 10 ? 'Oct' : month === 11 ? 'Nov' : 'Dec'; 
+    return month === 0 ? 'Jan' : month === 1 ? 'Feb' : month === 2 ? 'Mar' : month === 3 ? 'Apr' : month === 4 ? 'May' : month === 5 ? 'June' : month === 6 ? 'July' : month === 7 ? 'Aug' : month === 8 ? 'Sept' : month === 9 ? 'Oct' : month === 10 ? 'Nov' : 'Dec'; 
 }
 
 function Work({position, company, fromDateWE, tillDateWE, contribution}) {
-    // const fromDate = `${getMonthString(duration.fromDateWE.getMonth())}'${duration.fromDateWE.getFullYear()}`
-    // let tillDate = undefined;
-    // const today = new Date();
-    // if (duration.tillDateWE.toDateString() === today.toDateString()) {
-    //     tillDate = 'present'
-    // } else {
-    //     tillDate = `${getMonthString(duration.tillDateWE.getMonth())}' ${duration.tillDateWE.getFullYear()}`
-    // }
+    let fromDate = undefined;
+    let tillDate = undefined;
+    let today =  new Date();
+    const fromDateWEValue = new Date(fromDateWE);
+    const tillDateWEValue = new Date(tillDateWE)
+
+    if (fromDateWE !== '') {
+        fromDate = `${getMonthString(fromDateWEValue.getMonth())}'${fromDateWEValue.getFullYear()}`;
+    }
+    if (tillDateWE !== '') {
+        if(tillDateWEValue.toDateString() === today.toDateString()) {
+            tillDate = 'present';
+        } else {
+            tillDate = `${getMonthString(tillDateWEValue.getMonth())}' ${tillDateWEValue.getFullYear()}`;
+        }
+    }
     return (
         <div>
             <div className="info">
                 <h3>{position}</h3>
                 <h4>{company}</h4>
-                <p>{fromDateWE} - {tillDateWE}</p>
+                <p>{fromDate} - {tillDate}</p>
             </div>
             <p className='description'>{contribution}</p>
         </div>
