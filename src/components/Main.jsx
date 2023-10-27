@@ -15,7 +15,7 @@ export default function Main () {
     const [personalPortfolioLink, setPersonalPortfolioLink] = useState('');
     const [position, setPosition] = useState('');
     const [organization, setOrganization] = useState('');
-    const [fromDateWE, setFromeDateWE] = useState('');
+    const [fromDateWE, setFromDateWE] = useState('');
     const [tillDateWE, setTillDateWE] = useState('');
     const [contribution, setContribution] = useState('');
 
@@ -30,9 +30,9 @@ export default function Main () {
                     onLinkedInLinkChange={setLinkedInLink}
                     onGithubLinkChange={setGithubLink}
                     onPersonalPortfolioLinkChange={setPersonalPortfolioLink}
-                    onPostionChange={setPosition}
+                    onPositionChange={setPosition}
                     onOrganizationChange={setOrganization}
-                    onFromDateWEChange={setFromeDateWE}
+                    onFromDateWEChange={setFromDateWE}
                     onTillDateWEChange={setTillDateWE}
                     onContributionChange={setContribution}
                 />

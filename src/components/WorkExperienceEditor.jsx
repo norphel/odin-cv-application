@@ -49,7 +49,6 @@ function WorkDetails({onPositionChange, onOrganizationChange, onFromDateWEChange
 export default function WorkExperienceEditor({activeEditor, onPositionChange, onOrganizationChange, onFromDateWEChange, onTillDateWEChange, onContributionChange}) {
     let className = 'workExperienceEditor ';
     if (activeEditor === 'WorkExperience') {
-        console.log(activeEditor);
         className += 'active';
     }
     return (
