@@ -15,7 +15,6 @@ function Project() {
 export default function ProjectsEditor({activeEditor}) {
     let className = 'projectsEditor ';
     if (activeEditor === 'Projects') {
-        console.log(activeEditor);
         className += 'active';
     }
     return (

@@ -30,7 +30,6 @@ function Education() {
 export default function EducationEditor({activeEditor}) {
     let className = 'educationEditor ';
     if (activeEditor === 'Education') {
-        console.log(activeEditor);
         className += 'active';
     }
     return (

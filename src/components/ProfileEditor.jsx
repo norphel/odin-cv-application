@@ -74,7 +74,6 @@ function Links({onLinkedInLinkChange, onGithubLinkChange, onPersonalPortfolioLin
 export default function ProfileEditor({activeEditor, onFirstNameChange, onLastNameChange, onPhoneChange, onEmailChange, onLinkedInLinkChange, onGithubLinkChange, onPersonalPortfolioLinkChange}) {
     let className = 'profileEditor  ';
     if (activeEditor === 'Profile') {
-        console.log(activeEditor);
         className += 'active';
     }
     return (
