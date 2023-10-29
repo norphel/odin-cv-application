@@ -6,14 +6,14 @@ function Project({title, linkToProject, description}) {
         </div>
     )
 }
-export default function Projects() {
+export default function Projects({projectTitle, projectDescription}) {
     return (
         <section className="projects">
             <h2>Projects</h2>
             <Project 
-                title={'Project 1 title'}
+                title={projectTitle}
                 linkToProject={'https://linktoproject1'}
-                description={'Describe about the project in few sentences.'}
+                description={projectDescription}
             />
             <Project 
                 title={'Project 2 title'}
