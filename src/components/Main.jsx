@@ -18,9 +18,8 @@ export default function Main () {
     const [fromDateWE, setFromDateWE] = useState('');
     const [tillDateWE, setTillDateWE] = useState('');
     const [contribution, setContribution] = useState('');
-    const [projectTitle, setProjectTitle] = useState('');
-    const [projectDescription, setProjectDescription] = useState('');
-
+    
+    const [projects, setProjects] = useState([{ title: '', description: ''}]);
     return (
         <>
             <main>
@@ -37,8 +36,8 @@ export default function Main () {
                     onFromDateWEChange={setFromDateWE}
                     onTillDateWEChange={setTillDateWE}
                     onContributionChange={setContribution}
-                    onProjectTitleChange={setProjectTitle}
-                    onProjectDescriptionChange={setProjectDescription}
+                    projects={projects}
+                    setProjects={setProjects}
                 />
                 <Preview 
                     firstName={firstName}
@@ -53,8 +52,7 @@ export default function Main () {
                     fromDateWE={fromDateWE}
                     tillDateWE={tillDateWE}
                     contribution={contribution}
-                    projectTitle={projectTitle}
-                    projectDescription={projectDescription}
+                    projects={projects}
                 />
             </main>
         </>
