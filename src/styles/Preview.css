@@ -49,8 +49,9 @@
     font-style: italic;
     text-align: right;
 }
-.workExperience .description {
+.description {
     text-align: justify;
+    white-space: pre-line;
 }
 
 
