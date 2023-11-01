@@ -2,7 +2,7 @@ function getMonthString(month) {
     return month === 0 ? 'Jan' : month === 1 ? 'Feb' : month === 2 ? 'Mar' : month === 3 ? 'Apr' : month === 4 ? 'May' : month === 5 ? 'June' : month === 6 ? 'July' : month === 7 ? 'Aug' : month === 8 ? 'Sept' : month === 9 ? 'Oct' : month === 10 ? 'Nov' : 'Dec'; 
 }
 
-function Work({position, company, fromDateWE, tillDateWE, contribution}) {
+function Work({position, organization, fromDateWE, tillDateWE, contribution}) {
     let fromDate = undefined;
     let tillDate = undefined;
     let today =  new Date();
@@ -23,24 +23,27 @@ function Work({position, company, fromDateWE, tillDateWE, contribution}) {
         <div>
             <div className="info">
                 <h3>{position}</h3>
-                <h4>{company}</h4>
+                <h4>{organization}</h4>
                 <p>{fromDate} - {tillDate}</p>
             </div>
             <p className='description'>{contribution}</p>
         </div>
     )
 }
-export default function WorkExperience({position, organization, fromDateWE, tillDateWE, contribution}) {
+export default function WorkExperience({workExperiences}) {
     return (
         <section className='workExperience'>
             <h2>Work Experience</h2>
-            <Work 
-                position={position}
-                company={organization}
-                fromDateWE={fromDateWE}
-                tillDateWE={tillDateWE}
-                contribution={contribution}
-            />
+            {workExperiences.map((workExperience, index) => (
+                <Work
+                    key={index}
+                    position={workExperience.position}
+                    organization={workExperience.organization}
+                    fromDateWE={workExperience.fromDateWE}
+                    tillDateWE={workExperience.tillDateWE}
+                    contribution={workExperience.contribution}
+                />
+            ))}
         </section>
     )
 }

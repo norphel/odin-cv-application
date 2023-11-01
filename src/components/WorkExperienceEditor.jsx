@@ -1,4 +1,4 @@
-function WorkDetails({onPositionChange, onOrganizationChange, onFromDateWEChange, onTillDateWEChange, onContributionChange}) {
+function WorkDetails({workExperience, onPositionChange, onOrganizationChange, onFromDateWEChange, onTillDateWEChange, onContributionChange}) {
     return (
         <>
             <label htmlFor="position" id="position">Position
@@ -6,6 +6,7 @@ function WorkDetails({onPositionChange, onOrganizationChange, onFromDateWEChange
                     id="position" 
                     htmlFor="position" 
                     type="text"
+                    value={workExperience.position}
                     onChange={(e) => onPositionChange(e.target.value)} 
                 />
             </label>
@@ -14,6 +15,7 @@ function WorkDetails({onPositionChange, onOrganizationChange, onFromDateWEChange
                     id="organization" 
                     htmlFor="organization" 
                     type="text" 
+                    value={workExperience.organization}
                     onChange={(e) => onOrganizationChange(e.target.value)}
                 />
             </label>
@@ -22,6 +24,7 @@ function WorkDetails({onPositionChange, onOrganizationChange, onFromDateWEChange
                     id="fromDate" 
                     htmlFor="fromDate" 
                     type="date" 
+                    value={workExperience.fromDateWE}
                     onChange={(e) => onFromDateWEChange(e.target.value)}
                 />
             </label>
@@ -30,6 +33,7 @@ function WorkDetails({onPositionChange, onOrganizationChange, onFromDateWEChange
                     id="toDate" 
                     htmlFor="toDate" 
                     type="date" 
+                    value={workExperience.tillDateWE}
                     onChange={(e) => onTillDateWEChange(e.target.value)}
                 />
             </label>
@@ -37,30 +41,64 @@ function WorkDetails({onPositionChange, onOrganizationChange, onFromDateWEChange
                 <textarea 
                     id="description" 
                     htmlFor="description" 
-                    rows={'5'}
+                    rows={5}
+                    value={workExperience.contribution}
                     onChange={(e) => onContributionChange(e.target.value)}
                 />
             </label>
-            <button type="button">Add More</button>
         </>
     )
 }
 
-export default function WorkExperienceEditor({activeEditor, onPositionChange, onOrganizationChange, onFromDateWEChange, onTillDateWEChange, onContributionChange}) {
+export default function WorkExperienceEditor({activeEditor, workExperiences, setWorkExperiences}) {
     let className = 'workExperienceEditor ';
     if (activeEditor === 'WorkExperience') {
         className += 'active';
     }
+
+    const addWorkExperience = () => {
+        setWorkExperiences([...workExperiences, {position: '', organization: '', fromDateWE: '', tillDateWE: '', contribution: ''}])
+    }
+    const handlePositionChange = (index, value) => {
+        const updatedWE = [...workExperiences];
+        updatedWE[index].position = value;
+        setWorkExperiences(updatedWE);
+    }
+    const handleOrganizationChange = (index, value) => {
+        const updatedWE = [...workExperiences];
+        updatedWE[index].organization = value;
+        setWorkExperiences(updatedWE);
+    }
+    const handleFromDateWEChange = (index, value) => {
+        const updatedWE = [...workExperiences];
+        updatedWE[index].fromDateWE = value;
+        setWorkExperiences(updatedWE);
+    }
+    const handleTillDateWEChange = (index, value) => {
+        const updatedWE = [...workExperiences];
+        updatedWE[index].tillDateWE = value;
+        setWorkExperiences(updatedWE);
+    }
+    const handleContributionChange = (index, value) => {
+        const updatedWE = [...workExperiences];
+        updatedWE[index].contribution = value;
+        setWorkExperiences(updatedWE);
+    }
     return (
         <div className={className}>
             <h2>Work Experience</h2>
-            <WorkDetails 
-                onPositionChange={onPositionChange}
-                onOrganizationChange={onOrganizationChange}
-                onFromDateWEChange={onFromDateWEChange}
-                onTillDateWEChange={onTillDateWEChange}
-                onContributionChange={onContributionChange}
-            />
+            {workExperiences.map((workExperience, index) => (
+                <WorkDetails 
+                    key={index}
+                    workExperience={workExperience}
+                    onPositionChange={(value) => handlePositionChange(index, value)}
+                    onOrganizationChange={(value) => handleOrganizationChange(index, value)}
+                    onFromDateWEChange={(value) => handleFromDateWEChange(index, value)}
+                    onTillDateWEChange={(value) => handleTillDateWEChange(index, value)}
+                    onContributionChange={(value) => handleContributionChange(index, value)}
+                />
+            ))}
+            <button type="button" onClick={addWorkExperience}>Add More</button>
         </div>
     )
 }

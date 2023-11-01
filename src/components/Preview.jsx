@@ -6,7 +6,7 @@ import Skills from './Skills';
 
 import '../styles/Preview.css';
 
-export default function Preview({firstName, lastName, phone, email, linkedInLink, githubLink, personalPortfolioLink, position, organization, fromDateWE, tillDateWE, contribution, projects}) {
+export default function Preview({firstName, lastName, phone, email, linkedInLink, githubLink, personalPortfolioLink, workExperiences, projects}) {
     return (
         <div className="preview">
             <Profile
@@ -20,11 +20,7 @@ export default function Preview({firstName, lastName, phone, email, linkedInLink
             />
             <hr />
             <WorkExperience 
-                position={position}
-                organization={organization}
-                fromDateWE={fromDateWE}
-                tillDateWE={tillDateWE}
-                contribution={contribution}
+                workExperiences={workExperiences}
             />
             <Projects 
                 projects={projects}

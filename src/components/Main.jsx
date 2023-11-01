@@ -13,12 +13,8 @@ export default function Main () {
     const [linkedInLink, setLinkedInLink] = useState('');
     const [githubLink, setGithubLink] = useState('');
     const [personalPortfolioLink, setPersonalPortfolioLink] = useState('');
-    const [position, setPosition] = useState('');
-    const [organization, setOrganization] = useState('');
-    const [fromDateWE, setFromDateWE] = useState('');
-    const [tillDateWE, setTillDateWE] = useState('');
-    const [contribution, setContribution] = useState('');
     
+    const [workExperiences, setWorkExperiences] = useState([{position: '', organization: '', fromDateWE: '', tillDateWE: '', contribution: ''}])
     const [projects, setProjects] = useState([{ title: '', description: ''}]);
     return (
         <>
@@ -31,11 +27,8 @@ export default function Main () {
                     onLinkedInLinkChange={setLinkedInLink}
                     onGithubLinkChange={setGithubLink}
                     onPersonalPortfolioLinkChange={setPersonalPortfolioLink}
-                    onPositionChange={setPosition}
-                    onOrganizationChange={setOrganization}
-                    onFromDateWEChange={setFromDateWE}
-                    onTillDateWEChange={setTillDateWE}
-                    onContributionChange={setContribution}
+                    workExperiences={workExperiences}
+                    setWorkExperiences={setWorkExperiences}
                     projects={projects}
                     setProjects={setProjects}
                 />
@@ -47,11 +40,7 @@ export default function Main () {
                     linkedInLink={linkedInLink}
                     githubLink={githubLink}
                     personalPortfolioLink={personalPortfolioLink}
-                    position={position}
-                    organization={organization}
-                    fromDateWE={fromDateWE}
-                    tillDateWE={tillDateWE}
-                    contribution={contribution}
+                    workExperiences={workExperiences}
                     projects={projects}
                 />
             </main>
