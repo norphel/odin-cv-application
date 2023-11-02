@@ -1,7 +1,7 @@
-function Project({title, description}) {
+function Project({title, link, description}) {
     return (
         <div>
-            <h3>{title}</h3>
+            <a href={link}><h3>{title}</h3></a>
             <p className="description">{description}</p>
         </div>
     )
@@ -14,6 +14,7 @@ export default function Projects({projects}) {
                 <Project 
                     key={index}
                     title={project.title}
+                    link={project.link}
                     description={project.description}
                 />
             ))}

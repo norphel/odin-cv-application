@@ -1,4 +1,4 @@
-function Project({project, onProjectTitleChange, onProjectDescriptionChange}) {
+function Project({project, onProjectTitleChange, onProjectLinkChange, onProjectDescriptionChange}) {
 
     return (
         <>
@@ -7,6 +7,13 @@ function Project({project, onProjectTitleChange, onProjectDescriptionChange}) {
                     type="text" 
                     value={project.title}
                     onChange={(e) => onProjectTitleChange(e.target.value)}
+                />
+            </label>
+            <label htmlFor="projectLink">Project Link 
+                <input 
+                    type="text" 
+                    value={project.link}
+                    onChange={(e) => onProjectLinkChange(e.target.value)}
                 />
             </label>
             <label htmlFor="projectDescription">Description
@@ -27,11 +34,16 @@ export default function ProjectsEditor({activeEditor, projects, setProjects}) {
     }
 
     const addProject = () => {
-        setProjects([...projects, {title: '', description: ''}]);
+        setProjects([...projects, {title: '', link: '', description: ''}]);
     }
     const handleProjectTitleChange = (index, value) => {
         const updatedProjects = [...projects];
         updatedProjects[index].title = value;
+        setProjects(updatedProjects);
+    }
+    const handleProjectLinkChange = (index, value) => {
+        const updatedProjects = [...projects];
+        updatedProjects[index].link = value;
         setProjects(updatedProjects);
     }
     const handleProjectDescriptionChange = (index, value) => {
@@ -47,6 +59,7 @@ export default function ProjectsEditor({activeEditor, projects, setProjects}) {
                     key={index}
                     project={project}
                     onProjectTitleChange={(value) => handleProjectTitleChange(index, value)}
+                    onProjectLinkChange={(value) => handleProjectLinkChange(index, value)}
                     onProjectDescriptionChange={(value) => handleProjectDescriptionChange(index, value)}
                 />
             ))}

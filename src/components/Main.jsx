@@ -15,7 +15,7 @@ export default function Main () {
     const [personalPortfolioLink, setPersonalPortfolioLink] = useState('');
     
     const [workExperiences, setWorkExperiences] = useState([{position: '', organization: '', fromDateWE: '', tillDateWE: '', contribution: ''}])
-    const [projects, setProjects] = useState([{ title: '', description: ''}]);
+    const [projects, setProjects] = useState([{ title: '', link:'', description: ''}]);
     return (
         <>
             <main>
