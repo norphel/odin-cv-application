@@ -14,8 +14,9 @@ export default function Main () {
     const [githubLink, setGithubLink] = useState('');
     const [personalPortfolioLink, setPersonalPortfolioLink] = useState('');
     
-    const [workExperiences, setWorkExperiences] = useState([{position: '', organization: '', fromDateWE: '', tillDateWE: '', contribution: ''}])
+    const [workExperiences, setWorkExperiences] = useState([{position: '', organization: '', fromDateWE: '', tillDateWE: '', contribution: ''}]);
     const [projects, setProjects] = useState([{ title: '', link:'', description: ''}]);
+    const [educationDetails, setEducationDetails] = useState([{degree: '', institute: '', admYear: '', gradYear: '', gpaScore: '', scoreOutOf: ''}]);
     return (
         <>
             <main>
@@ -31,6 +32,8 @@ export default function Main () {
                     setWorkExperiences={setWorkExperiences}
                     projects={projects}
                     setProjects={setProjects}
+                    educationDetails={educationDetails}
+                    setEducationDetails={setEducationDetails}
                 />
                 <Preview 
                     firstName={firstName}
@@ -42,6 +45,7 @@ export default function Main () {
                     personalPortfolioLink={personalPortfolioLink}
                     workExperiences={workExperiences}
                     projects={projects}
+                    educationDetails={educationDetails}
                 />
             </main>
         </>

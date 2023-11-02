@@ -7,7 +7,7 @@ import ProjectsEditor from "./ProjectsEditor"
 import EducationEditor from "./EducationEditor"
 import SkillsEditor from "./SkillsEditor"
 
-export default function Editor({onFirstNameChange, onLastNameChange, onPhoneChange, onEmailChange, onLinkedInLinkChange, onGithubLinkChange, onPersonalPortfolioLinkChange, workExperiences, setWorkExperiences, projects, setProjects}) {
+export default function Editor({onFirstNameChange, onLastNameChange, onPhoneChange, onEmailChange, onLinkedInLinkChange, onGithubLinkChange, onPersonalPortfolioLinkChange, workExperiences, setWorkExperiences, projects, setProjects, educationDetails, setEducationDetails}) {
     const [activeEditor, setActiveEditor] = useState('Profile');
     
     return (
@@ -33,7 +33,11 @@ export default function Editor({onFirstNameChange, onLastNameChange, onPhoneChan
                 projects={projects}
                 setProjects={setProjects}
             />
-            <EducationEditor activeEditor={activeEditor} />
+            <EducationEditor 
+                activeEditor={activeEditor}
+                educationDetails={educationDetails}
+                setEducationDetails={setEducationDetails}
+            />
             <SkillsEditor activeEditor={activeEditor} />
         </div>
     )

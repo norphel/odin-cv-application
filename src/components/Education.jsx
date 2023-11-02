@@ -8,26 +8,21 @@ function EducationDetails({degree, institute, score, scoreOutOf, admissionYear, 
     )
 }
 
-export default function Education() {
+export default function Education({educationDetails}) {
     return (
         <section className="education">
             <h2>Education</h2>
-            <EducationDetails
-                degree={'Master of Technology - Computer Science'}
-                institute={'XYZ institute'}
-                score={'9'}
-                scoreOutOf={'10'}
-                admissionYear={'2021'}
-                graduationYear={'2023'}
-            />
-            <EducationDetails
-                degree={'Bachelors of Technology - Computer Science'}
-                institute={'ABCD institute'}
-                score={'8.7'}
-                scoreOutOf={'10'}
-                admissionYear={'2017'}
-                graduationYear={'2021'}
-            />
+            {educationDetails.map((education, index) => (
+                <EducationDetails 
+                    key={index}
+                    degree={education.degree}
+                    institute={education.institute}
+                    score={education.gpaScore}
+                    scoreOutOf={education.scoreOutOf}
+                    admissionYear={education.admYear}
+                    graduationYear={education.gradYear}
+                />
+            ))}
         </section>
     )
 }
