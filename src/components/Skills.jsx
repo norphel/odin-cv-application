@@ -7,22 +7,17 @@ function Skillset({title, listOfSkills}) {
     )
 }
 
-export default function Skills() {
+export default function Skills({skills}) {
     return (
         <section className="skills">
             <h2>Skills</h2>
-            <Skillset
-                title={'Skillset title'}
-                listOfSkills={'skill1, skill2, skill3'}
-            />
-            <Skillset
-                title={'Eg: Programming Languages'}
-                listOfSkills={'HTML, CSS, JavaScript, TypeScript'}
-            />
-            <Skillset
-                title={'Eg: Frameworks'}
-                listOfSkills={'React, NodeJS'}
-            />
+            {skills.map((skill, index) => (
+                <Skillset 
+                    key={index}
+                    title={skill.skillset}
+                    listOfSkills={skill.skillsList}
+                />
+            ))}
         </section>
     )
 }
