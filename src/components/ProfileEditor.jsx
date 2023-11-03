@@ -1,20 +1,28 @@
-function Name({onFirstNameChange, onLastNameChange}) {
+function Name({profileDetails, setProfileDetails}) {
+    const handleFirstNameChange = (e) => {
+        setProfileDetails({ ...profileDetails, firstName: e.target.value })
+    }
+    const handleLastNameChange = (e) => {
+        setProfileDetails({ ...profileDetails, lastName: e.target.value })
+    }
     return (
         <div className="name">
             <fieldset>
                 <legend>Name</legend>
                 <label htmlFor="firstName">First Name 
                     <input 
-                        htmlFor="firstName" 
+                        id="firstName" 
                         type="text" 
-                        onChange={(e) => onFirstNameChange(e.target.value)}
+                        value={profileDetails.firstName}
+                        onChange={handleFirstNameChange}
                     />
                 </label>
                 <label htmlFor="lastName">Last Name
                     <input 
-                        htmlFor="lastName" 
+                        id="lastName" 
                         type="text" 
-                        onChange={(e) => onLastNameChange(e.target.value)}
+                        value={profileDetails.lastName}
+                        onChange={handleLastNameChange}
                     />
                 </label>
             </fieldset>
@@ -22,7 +30,13 @@ function Name({onFirstNameChange, onLastNameChange}) {
     )
 }
 
-function Contact({onPhoneChange, onEmailChange}) {
+function Contact({profileDetails, setProfileDetails}) {
+    const handlePhoneChange = (e) => {
+        setProfileDetails({ ...profileDetails, phone: e.target.value })
+    }
+    const handleEmailChange = (e) => {
+        setProfileDetails({ ...profileDetails, email: e.target.value })
+    }
     return (
         <div className="contact">
             <fieldset>
@@ -30,20 +44,31 @@ function Contact({onPhoneChange, onEmailChange}) {
                 <label htmlFor="phone">Phone 
                     <input 
                         type="tel"
-                        onChange={(e) => onPhoneChange(e.target.value)} 
+                        value={profileDetails.phone}
+                        onChange={handlePhoneChange} 
                     />
                 </label>
                 <label htmlFor="email">Email
                     <input 
                         type="email"
-                        onChange={(e) => onEmailChange(e.target.value)} />
+                        value={profileDetails.email}
+                        onChange={handleEmailChange} />
                 </label>
             </fieldset>
         </div>
     )
 }
 
-function Links({onLinkedInLinkChange, onGithubLinkChange, onPersonalPortfolioLinkChange}) {
+function Links({profileDetails, setProfileDetails}) {
+    const handleLinkedInLinkChange = (e) => {
+        setProfileDetails({ ...profileDetails, linkedInLink: e.target.value })
+    }
+    const handleGithubLinkChange = (e) => {
+        setProfileDetails({ ...profileDetails, githubLink: e.target.value })
+    }
+    const handlePersonalPortfolioLinkChange = (e) => {
+        setProfileDetails({ ...profileDetails, personalPortfolioLink: e.target.value })
+    }
     return (
         <div className="links">
             <fieldset>
@@ -51,19 +76,22 @@ function Links({onLinkedInLinkChange, onGithubLinkChange, onPersonalPortfolioLin
                 <label htmlFor="linkedin">LinkedIn 
                     <input 
                         type="url" 
-                        onChange={(e) => onLinkedInLinkChange(e.target.value)}
+                        value={profileDetails.linkedInLink}
+                        onChange={handleLinkedInLinkChange}
                     />
                 </label>
                 <label htmlFor="github">GitHub 
                     <input 
                         type="url" 
-                        onChange={(e) => onGithubLinkChange(e.target.value)}
+                        value={profileDetails.githubLink}
+                        onChange={handleGithubLinkChange}
                     />
                 </label>
                 <label htmlFor="personalPortfolio">Personal Portfolio 
                     <input 
                         type="url" 
-                        onChange={(e) => onPersonalPortfolioLinkChange(e.target.value)}
+                        value={profileDetails.personalPortfolioLink}
+                        onChange={handlePersonalPortfolioLinkChange}
                     />
                 </label>
             </fieldset>
@@ -71,7 +99,7 @@ function Links({onLinkedInLinkChange, onGithubLinkChange, onPersonalPortfolioLin
     )
 }
 
-export default function ProfileEditor({activeEditor, onFirstNameChange, onLastNameChange, onPhoneChange, onEmailChange, onLinkedInLinkChange, onGithubLinkChange, onPersonalPortfolioLinkChange}) {
+export default function ProfileEditor({activeEditor, profileDetails, setProfileDetails}) {
     let className = 'profileEditor  ';
     if (activeEditor === 'Profile') {
         className += 'active';
@@ -80,17 +108,16 @@ export default function ProfileEditor({activeEditor, onFirstNameChange, onLastNa
         <div className={className}>
             <h2>Profile</h2>
             <Name 
-                onFirstNameChange={onFirstNameChange}
-                onLastNameChange={onLastNameChange}
+                profileDetails={profileDetails}
+                setProfileDetails={setProfileDetails}
             />
             <Contact 
-                onPhoneChange={onPhoneChange}
-                onEmailChange={onEmailChange}
+                profileDetails={profileDetails}
+                setProfileDetails={setProfileDetails}
             />
             <Links 
-                onLinkedInLinkChange={onLinkedInLinkChange}
-                onGithubLinkChange={onGithubLinkChange}
-                onPersonalPortfolioLinkChange={onPersonalPortfolioLinkChange}
+                profileDetails={profileDetails}
+                setProfileDetails={setProfileDetails}
             />
         </div>
     )

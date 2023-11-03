@@ -6,14 +6,7 @@ import Preview from './Preview'
 import '../styles/Main.css';
 
 export default function Main () {
-    const [firstName, setFirstName] = useState(''); 
-    const [lastName, setLastName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('')
-    const [linkedInLink, setLinkedInLink] = useState('');
-    const [githubLink, setGithubLink] = useState('');
-    const [personalPortfolioLink, setPersonalPortfolioLink] = useState('');
-    
+    const [profileDetails, setProfileDetails] = useState({firstName: '', lastName: '', phone: '', email: '', linkedInLink: '', githubLink: '', personalPortfolioLink: ''})
     const [workExperiences, setWorkExperiences] = useState([{position: '', organization: '', fromDateWE: '', tillDateWE: '', contribution: ''}]);
     const [projects, setProjects] = useState([{ title: '', link:'', description: ''}]);
     const [educationDetails, setEducationDetails] = useState([{degree: '', institute: '', admYear: '', gradYear: '', gpaScore: '', scoreOutOf: ''}]);
@@ -22,13 +15,8 @@ export default function Main () {
         <>
             <main>
                 <Editor
-                    onFirstNameChange={setFirstName} 
-                    onLastNameChange={setLastName}  
-                    onPhoneChange={setPhone} 
-                    onEmailChange={setEmail}
-                    onLinkedInLinkChange={setLinkedInLink}
-                    onGithubLinkChange={setGithubLink}
-                    onPersonalPortfolioLinkChange={setPersonalPortfolioLink}
+                    profileDetails={profileDetails}
+                    setProfileDetails={setProfileDetails}
                     workExperiences={workExperiences}
                     setWorkExperiences={setWorkExperiences}
                     projects={projects}
@@ -39,13 +27,7 @@ export default function Main () {
                     setSkills={setSkills}
                 />
                 <Preview 
-                    firstName={firstName}
-                    lastName={lastName}
-                    phone={phone}
-                    email={email}
-                    linkedInLink={linkedInLink}
-                    githubLink={githubLink}
-                    personalPortfolioLink={personalPortfolioLink}
+                    profileDetails={profileDetails}
                     workExperiences={workExperiences}
                     projects={projects}
                     educationDetails={educationDetails}

@@ -23,19 +23,19 @@ function Link({src, alt, url}) {
     }
 }
 
-export default function Profile({firstName, lastName, phone, email, linkedInLink, githubLink, personalPortfolioLink}) {
+export default function Profile({profileDetails}) {
     return (
         <div className="profile">
-            <h1 className='name'>{firstName} {lastName}</h1>
+            <h1 className='name'>{profileDetails.firstName} {profileDetails.lastName}</h1>
             <div className="contactsAndLinks">
-            <div className="contacts">
-                    <Contact src={phoneIcon} alt={'phone icon'} contact={phone} />
-                    <Contact src={emailIcon} alt={'email icon'} contact={email} />
+                <div className="contacts">
+                    <Contact src={phoneIcon} alt={'phone icon'} contact={profileDetails.phone} />
+                    <Contact src={emailIcon} alt={'email icon'} contact={profileDetails.email} />
                 </div>
                 <div className="links">
-                    <Link src={linkedIn} alt={'linkedIn icon'} url={linkedInLink} />
-                    <Link src={github} alt={'github icon'} url={githubLink} />
-                    <Link src={personalWebsite} alt={'personal website icon'} url={personalPortfolioLink} />
+                    <Link src={linkedIn} alt={'linkedIn icon'} url={profileDetails.linkedInLink} />
+                    <Link src={github} alt={'github icon'} url={profileDetails.githubLink} />
+                    <Link src={personalWebsite} alt={'personal website icon'} url={profileDetails.personalPortfolioLink} />
                 </div>
             </div>
         </div>
