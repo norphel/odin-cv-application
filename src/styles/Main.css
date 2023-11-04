@@ -13,8 +13,6 @@ nav {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    position: sticky;
-    top: 10px;
 }
 nav>div {
     width: 50px;
@@ -37,6 +35,8 @@ nav>div.active {
 .preview {
     margin: 1rem 2rem 1rem 1rem;
     background-color: #fff;
+    width: auto;
+    height: fit-content;
 }
 
 .editor > div {
