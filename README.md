@@ -13,4 +13,4 @@ Features yet to implement:
 - user can print the final resume
 - use conditional rendering to show or hide headings and other elements depending on whether user has entered anything or not so far
 
-[Live preview](https://effortless-genie-18dc6e.netlify.app/)
+[Live preview](https://odin-cv-builder.netlify.app/)
